@@ -13,16 +13,16 @@
 	</div>
 
 	<script>
-	    window.onload = function () {
-	        var fileInput = document.getElementById("fileInput");
-	        var fileDisplayArea = document.getElementById('fileDisplayArea');
-	        fileInput.addEventListener("change", function (e) {
-	            var file = fileInput.files[0];
-	            var fileReader = new FileReader();
-	            fileReader.onload = function (e) {
+	    window.onload = () => {
+	        let fileInput = document.getElementById("fileInput");
+	        let fileDisplayArea = document.getElementById('fileDisplayArea');
+	        fileInput.addEventListener("change", (e) => {
+	            let file = fileInput.files[0];
+	            let fileReader = new FileReader();
+	            fileReader.onload = (e) => {
 	                fileDisplayArea.innerText = fileReader.result;
 	                console.log(fileReader.result);
-	            }
+	            };
 	            fileReader.readAsText(file);
 	        });
 	    }
